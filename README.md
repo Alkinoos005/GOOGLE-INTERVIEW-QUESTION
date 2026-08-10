@@ -8,12 +8,14 @@ Inspired by the famous tech-industry meme that turned LeetCode 226 into an absol
 Problem Overview
 Given the root of a binary tree, invert the tree, and return its root.
 
+```
 Input Tree:                   Inverted Tree:
      4                             4
    /   \                         /   \
   2     7                       7     2
- / \   / \                     / \   / \
+ / \   / \                     / \   / \                         
 1   3 6   9                   9   6 3   1
+```
 
 Solution Architecture
 The algorithm operates on a Depth-First Search (DFS) pattern, swapping tree branches level-by-level using Python's tuple packing and unpacking.
