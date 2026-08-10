@@ -8,7 +8,6 @@ Inspired by the famous tech-industry meme that turned LeetCode 226 into an absol
 Problem Overview
 Given the root of a binary tree, invert the tree, and return its root.
 
-Plaintext
 Input Tree:                   Inverted Tree:
      4                             4
    /   \                         /   \
@@ -41,11 +40,10 @@ class Solution:
         self.invertTree(root.right)
         
         return root
+        
 How It Works
 
-We check if the current node (root) is null (None). If it is, we've hit the bottom of a branch, so we return None.The Swap: Python makes swapping children clean and easy in a single line: root.left, root.right = root.right, root.left. This swaps the left subtree with the right subtree at the current level.Recursive Steps: We call invertTree on the newly swapped left and right children to repeat the process down the entire tree using Depth-First Search (DFS).Complexity AnalysisTime Complexity: O(n), where n is the number of nodes in the binary tree. Every single node is visited exactly once.Space Complexity: $O(h)$, where h is the height of the tree, representing the maximum memory used by the call stack during recursion. In the worst case (a skewed tree), this is $O(n)$; in the best case (a balanced tree), it is $O(\log n)$.Base Case Check: Handles edge cases (empty tree or leaf node children) by returning None immediately when a root is missing.
-In-Place Pointer Swap: Executes a O(1) simultaneous memory address exchange (root.left, root.right = root.right, root.left), shifting entire subtrees at once.
-Recursive Stack Unwinding: Propagates down the tree using Depth-First Search, processing sub-nodes bottom-up until the entire tree structure is inverted.
+We check if the current node (root) is null (None). If it is, we've hit the bottom of a branch, so we return None.The Swap: Python makes swapping children clean and easy in a single line: root.left, root.right = root.right, root.left. This swaps the left subtree with the right subtree at the current level.Recursive Steps: We call invertTree on the newly swapped left and right children to repeat the process down the entire tree using Depth-First Search (DFS).Complexity AnalysisTime Complexity: O(n), where n is the number of nodes in the binary tree. Every single node is visited exactly once.Space Complexity: O(h), where h is the height of the tree, representing the maximum memory used by the call stack during recursion. In the worst case (a skewed tree), this is O(n); in the best case (a balanced tree), it is O(\log n).Base Case Check: Handles edge cases (empty tree or leaf node children) by returning None immediately when a root is missing.In-Place Pointer Swap: Executes a O(1) simultaneous memory address exchange (root.left, root.right = root.right, root.left), shifting entire subtrees at once.Recursive Stack Unwinding: Propagates down the tree using Depth-First Search, processing sub-nodes bottom-up until the entire tree structure is inverted.
 
 Complexity Analysis
 Metric	Complexity	Explanation
